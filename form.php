@@ -25,7 +25,7 @@
                     <div class="text-center">
                         <img src="logo.jpeg"
                             style="width: 25%;" alt="logo">
-                        <h4 class="mt-1 mb-5 pb-1">Tecnoldelicias</h4>
+                        <h4 class="mt-1 mb-5 pb-1">Tecnoldeliciosas</h4>
                         </div>
 
                         <?php 

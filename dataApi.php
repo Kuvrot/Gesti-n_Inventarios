@@ -32,7 +32,7 @@
             $can = $_POST['can'];
             $pu = $_POST['pu']; 
 
-            $sql = "INSERT INTO ms_compras (ID_Producto, ID_Proveedor, Cantidad, Precio_Unitario_Compra, Fecha_Compra) 
+            $sql = "INSERT INTO ms_Compras (ID_Producto, ID_Proveedor, Cantidad, Precio_Unitario_Compra, Fecha_Compra) 
             VALUES ($prod, $prov,$can , $pu, NOW())"; break;
 
         case 3:
