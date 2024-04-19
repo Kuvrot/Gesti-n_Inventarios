@@ -5,7 +5,7 @@
         placeholder="ID producto" />
         <p></p>
         <input type="text" id="form2Example11" name="prov" class="form-control"
-        placeholder="ID proveedor"/>
+        placeholder="ID cliente"/>
         <p></p>
 
         <input type="text" id="form2Example11" name="can" class="form-control"
