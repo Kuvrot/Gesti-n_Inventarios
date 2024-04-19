@@ -20,6 +20,7 @@
                         <?php
 
                             if ($result->num_rows > 0) {
+                                $i = 1;
                             // output data of each row
                             while($row = $result->fetch_assoc()) {
                                 echo "<tr>";
@@ -27,8 +28,10 @@
                                 echo "<td>" . $row["Nombre"] . "</td>";
                                 echo "<td>" . $row["Contacto"] . "</td>";
                                 echo "<td>" . $row["Direccion"] . "</td>";
-                                echo "<td>" . $row["Telefono"] . "</td>";
+                                echo "<td>" . $row["Telefono"] . "</td>"; 
+                                ?> <td><h6 class="row"><a href="delete.php?t=1&id=<?php echo $row["ID_Proveedor"]; ?>" style="text-align:right; color:red; text-decoration:none;">- REMOVE</a></h6></td> <?php
                                 echo "</tr>";
+                                $i++;
                             }
                         }
                             $conn->close();

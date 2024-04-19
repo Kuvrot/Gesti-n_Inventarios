@@ -30,6 +30,7 @@
                                 echo "<td>" . $row["Precio_Unitario"] . "</td>";
                                 echo "<td>" . $row["Stock_Disponible"] . "</td>";
                                 echo "<td>" . $row["Stock_Minimo"] . "</td>";
+                                ?> <td><h6 class="row"><a href="delete.php?t=0&id=<?php echo $row["ID_Producto"]; ?>" style="text-align:right; color:red; text-decoration:none;">- REMOVE</a></h6></td> <?php
                                 echo "</tr>";
                             }
                         }

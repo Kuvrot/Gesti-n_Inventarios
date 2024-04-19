@@ -72,7 +72,6 @@
                 </div>
             </div>
             </div>
-            <h4 class="row"><a href="form.php?t=0" style="text-align:right; color:red; text-decoration:none;">- REMOVE</a></h4>
         </div>
         </div>
     </div>

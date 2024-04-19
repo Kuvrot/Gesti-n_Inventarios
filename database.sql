@@ -32,13 +32,11 @@ CREATE TABLE ms_Compras (
     Cantidad INT,
     Precio_Unitario_Compra DECIMAL(10, 2),
     Fecha_Compra DATE,
-    FOREIGN KEY (ID_Producto) REFERENCES ctg_Producto(ID_Producto),
-    FOREIGN KEY (ID_Proveedor) REFERENCES ctg_Proveedor(ID_Proveedor),
     primary key (ID_Compra)
 );
 
 -- Crear la tabla ctg_cliente
-CREATE TABLE ctg_cliente (
+CREATE TABLE ctg_Cliente (
     ID_Cliente INT auto_increment,
     Nombre VARCHAR(255),
     Contacto TEXT,
@@ -56,8 +54,6 @@ CREATE TABLE ms_Ventas (
     Cantidad INT,
     Precio_Unitario_Venta DECIMAL(10, 2),
     Fecha_Venta DATE,
-    FOREIGN KEY (ID_Producto) REFERENCES ctg_Producto(ID_Producto),
-    FOREIGN KEY (ID_Cliente) REFERENCES ctg_Cliente(ID_Cliente),
     primary key (ID_Venta)
 );
 

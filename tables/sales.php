@@ -30,6 +30,7 @@
                                 echo "<td>" . $row["Cantidad"] . "</td>";
                                 echo "<td>" . $row["Precio_Unitario_Venta"] . "</td>";
                                 echo "<td>" . $row["Fecha_Venta"] . "</td>";
+                                ?> <td><h6 class="row"><a href="delete.php?t=3&id=<?php echo $row["ID_Venta"]; ?>" style="text-align:right; color:red; text-decoration:none;">- REMOVE</a></h6></td> <?php
                                 echo "</tr>";
                             }
                         }
