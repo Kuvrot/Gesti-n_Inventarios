@@ -30,6 +30,7 @@
                                 echo "<td>" . $row["Direccion"] . "</td>";
                                 echo "<td>" . $row["Telefono"] . "</td>"; 
                                 ?> <td><h6 class="row"><a href="delete.php?t=1&id=<?php echo $row["ID_Proveedor"]; ?>" style="text-align:right; color:red; text-decoration:none;">- REMOVE</a></h6></td> <?php
+                                ?> <td><h6 class="row"><a href="form.php?t=1&id=<?php echo $row["ID_Proveedor"]; ?>" style="text-align:right; color:blue; text-decoration:none;">* EDIT</a></h6></td> <?php
                                 echo "</tr>";
                                 $i++;
                             }

@@ -36,22 +36,27 @@
 
                                 switch ($table){
                                     case 0: 
-                                        echo "<p> Añadir producto </p>";
+                                        if (!isset($_GET['id']))
+                                            echo "<p> Añadir producto </p>";
                                         include "forms/products.php";
                                         break;
                                     case 1:   
+                                        if (!isset($_GET['id']))
                                         echo " <p> Añadir proveedor </p>";
                                         include "forms/suppliers.php";
                                         break;
-                                    case 2:   
+                                    case 2:  
+                                        if (!isset($_GET['id'])) 
                                         echo "<p> Añadir compra </p>";
                                         include "forms/purchases.php";
                                         break;
-                                    case 3:   
+                                    case 3:  
+                                        if (!isset($_GET['id'])) 
                                         echo "<p> Añadir ventas </p>";
                                         include "forms/sales.php";
                                         break;
                                     case 4:   
+                                        if (!isset($_GET['id']))
                                         echo "<p> Añadir clientes </p>";
                                         include "forms/clients.php";
                                         break;              
@@ -63,10 +68,8 @@
                 </div>
                 <div class="col-lg-6 d-flex align-items-center gradient-custom-1">
                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                    <h4 class="mb-4">We are more than just a company</h4>
-                    <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <h4 class="mb-4"></h4>
+                    <p class="small mb-0"></p>
                 </div>
                 </div>
             </div>
