@@ -93,9 +93,9 @@
                 $prov = $_POST['prov'];
                 $can = $_POST['can'];
                 $pu = $_POST['pu']; 
-    
-                $sql = "INSERT INTO ms_Ventas (ID_Producto, ID_Cliente, Cantidad, Precio_Unitario_Venta, Fecha_Venta) 
-                VALUES ($prod, $prov,$can , $pu, NOW())"; break;
+                $date = date("d-m-Y");
+                $sql = "INSERT INTO ms_Ventas (ID_Producto, NombreProducto,ID_Cliente, Cantidad, Precio_Unitario_Venta, Fecha_Venta) 
+                VALUES ($prod, (SELECT Nombre FROM ctg_Producto WHERE ID_Producto = $prod) , $prov,$can , $pu, '$date')"; break;
     
             case 4: 
                 $nombre = $_POST['nombre'];

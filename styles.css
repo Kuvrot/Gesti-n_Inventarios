@@ -73,3 +73,9 @@ tbody td {
     }
     }
 
+    #delete{
+      text-align:right; color:red; text-decoration:none;
+    }
+    #edit{
+      text-align:right; color:blue; text-decoration:none;
+    }

@@ -52,12 +52,12 @@
                                         break;
                                     case 3:  
                                         if (!isset($_GET['id'])) 
-                                        echo "<p> Añadir ventas </p>";
+                                        echo "<p> Añadir venta </p>";
                                         include "forms/sales.php";
                                         break;
                                     case 4:   
                                         if (!isset($_GET['id']))
-                                        echo "<p> Añadir clientes </p>";
+                                        echo "<p> Añadir cliente </p>";
                                         include "forms/clients.php";
                                         break;              
                                 }

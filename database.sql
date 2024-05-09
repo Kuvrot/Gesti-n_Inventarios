@@ -45,7 +45,6 @@ CREATE TABLE ctg_Cliente (
     primary key (ID_Cliente)
 );
 
--- Crear la tabla ms_ventas
 CREATE TABLE ms_Ventas (
     ID_Venta INT auto_increment,
     ID_Producto INT,
@@ -53,8 +52,7 @@ CREATE TABLE ms_Ventas (
     Cod_Barra INT,
     Cantidad INT,
     Precio_Unitario_Venta DECIMAL(10, 2),
-    Fecha_Venta DATE,
+    Fecha_Venta VARCHAR(20),
     primary key (ID_Venta)
 );
-
 

@@ -11,8 +11,8 @@
                         <?php ?>
                         <th scope="col">ID</th>
                         <th scope="col">Nombre</th>
+                        <th scope="col">Email</th>
                         <th scope="col">Contacto</th>
-                        <th scope="col">Dirección</th>
                         <th scope="col">Teléfono</th>
                     </tr>
                     </thead>
@@ -28,9 +28,9 @@
                                 echo "<td>" . $row["Contacto"] . "</td>";
                                 echo "<td>" . $row["Direccion"] . "</td>";
                                 echo "<td>" . $row["Telefono"] . "</td>";
-                                ?> <td><h6 class="row"><a href="delete.php?t=4&id=<?php echo $row["ID_Cliente"]; ?>" style="text-align:right; color:red; text-decoration:none;">- REMOVE</a></h6></td> <?php
+                                if (!isset($_GET['d'])){ ?> <td><h6 class="row"><a href="delete.php?t=4&id=<?php echo $row["ID_Cliente"]; ?>" style="text-align:right; color:red; text-decoration:none;">- REMOVE</a></h6></td> <?php
                                 ?> <td><h6 class="row"><a href="form.php?t=4&id=<?php echo $row["ID_Cliente"]; ?>" style="text-align:right; color:blue; text-decoration:none;">* EDIT</a></h6></td> <?php
-                                echo "</tr>";
+                                echo "</tr>";}
                             }
                         }
                             $conn->close();

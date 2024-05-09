@@ -45,11 +45,20 @@
                 }
             ?>
         </h2>
+                <div class="container">
+                    <a class="btn btn-light shadow" href="printReport.php?t=<?php echo $table?>&d=0" target="_blank">
+                        Print <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer-fill" viewBox="0 0 16 16">
+                        <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1"/>
+                        <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
+                        </svg>
+                    </a>
+                </div>
+            
             <div class="row justify-content-center">
-            <h4 class="row"><a href="form.php?t=<?php echo $table?>" style="text-align:right; color:green; text-decoration:none;">+ ADD</a></h4>
+            <h4 class="row"><a href="form.php?t=<?php echo $table?>" style="text-align:right; color:green; text-decoration:none;">+ AÑADIR</a></h4>
             <div class="col-12">
             
-                <div class="table-responsive bg-white shadow">
+                <div id="content" class="table-responsive bg-white shadow">
                     <?php 
                         switch ($table){
                             case 0: 
@@ -76,6 +85,26 @@
         </div>
     </div>
     </section>
+    <footer style="background-color: #ffe7e7;" class=" text-center text-lg-start shadow-lg sticky-bottom">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+  PROYECTO_ACADEMICO-NEGOCIOSEII-TECNMCAMPUSPAC
+  </div>
+  <!-- Copyright -->
+</footer>
+    <script>
+        function print (){
+            var divContents = document.getElementById("content").innerHTML; 
+            var a = window.open('', '', 'height=500, width=500'); 
+            a.document.write('<html>'); 
+            a.document.write('<body > <h1>Div contents are <br>'); 
+            a.document.write(divContents); 
+            a.document.write('</body></html>'); 
+            a.document.close(); 
+            a.print(); 
+        }
+    </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

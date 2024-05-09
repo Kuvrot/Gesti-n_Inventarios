@@ -30,9 +30,10 @@
                                 echo "<td>" . $row["Cantidad"] . "</td>";
                                 echo "<td>" . $row["Precio_Unitario_Compra"] . "</td>";
                                 echo "<td>" . $row["Fecha_Compra"] . "</td>";
-                                ?> <td><h6 class="row"><a href="delete.php?t=2&id=<?php echo $row["ID_Compra"]; ?>" style="text-align:right; color:red; text-decoration:none;">- REMOVE</a></h6></td> <?php
-                                ?> <td><h6 class="row"><a href="form.php?t=2&id=<?php echo $row["ID_Compra"]; ?>" style="text-align:right; color:blue; text-decoration:none;">* EDIT</a></h6></td> <?php
+                                if (!isset($_GET['d'])){?> <td><h6 class="row"><a href="delete.php?t=2&id=<?php echo $row["ID_Compra"]; ?>" style="text-align:right; color:red; text-decoration:none;">- REMOVER</a></h6></td> <?php
+                                ?> <td><h6 class="row"><a href="form.php?t=2&id=<?php echo $row["ID_Compra"]; ?>" style="text-align:right; color:blue; text-decoration:none;">* EDITAR</a></h6></td> <?php
                                 echo "</tr>";
+                                }
                             }
                         }
                             $conn->close();
