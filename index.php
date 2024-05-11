@@ -17,7 +17,7 @@
     <section class="intro">
     <div class="gradient-custom-1 h-100">
         <div class="mask d-flex align-items-center h-50">
-        <div class="container">
+        <div class="container" style="margin-top:10%;">
         <h2>
             <?php 
                 $table=0;
@@ -58,7 +58,7 @@
             <h4 class="row"><a href="form.php?t=<?php echo $table?>" style="text-align:right; color:green; text-decoration:none;">+ AÑADIR</a></h4>
             <div class="col-12">
             
-                <div id="content" class="table-responsive bg-white shadow">
+                <div id="content" class="table-responsive bg-white shadow" >
                     <?php 
                         switch ($table){
                             case 0: 

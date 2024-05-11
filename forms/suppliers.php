@@ -8,17 +8,17 @@
     <div data-mdb-input-init class="form-outline mb-4">
        
         <input type="text" id="form2Example11" name="nombre" class="form-control"
-        placeholder="Nombre" />
+        placeholder="Nombre" required/>
         <p></p>
-        <input type="text" id="form2Example11" name="con" class="form-control"
-        placeholder="Contacto"/>
+        <input type="email" id="form2Example11" name="con" class="form-control"
+        placeholder="Email" required />
         <p></p>
 
         <input type="text" id="form2Example11" name="dir" class="form-control"
-        placeholder="Dirección" />
+        placeholder="Contacto" required/>
         <p></p>
         <input type="text" id="form2Example11" name="tel" class="form-control"
-        placeholder="Teléfono" />
+        placeholder="Teléfono" required />
         <p></p>
         <p></p>
     </div>

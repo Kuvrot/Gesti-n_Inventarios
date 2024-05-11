@@ -10,12 +10,12 @@
         <input type="text" id="form2Example11" name="nombre" class="form-control"
         placeholder="Nombre" />
         <p></p>
-        <input type="text" id="form2Example11" name="con" class="form-control"
-        placeholder="Contacto"/>
+        <input type="email" id="form2Example11" name="con" class="form-control"
+        placeholder="Email"/>
         <p></p>
 
         <input type="text" id="form2Example11" name="dir" class="form-control"
-        placeholder="Dirección" />
+        placeholder="Contacto" />
         <p></p>
         <input type="text" id="form2Example11" name="tel" class="form-control"
         placeholder="Teléfono" />

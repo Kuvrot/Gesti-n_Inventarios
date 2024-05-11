@@ -48,6 +48,7 @@ CREATE TABLE ctg_Cliente (
 CREATE TABLE ms_Ventas (
     ID_Venta INT auto_increment,
     ID_Producto INT,
+    NombreProducto varchar(25),
     ID_Cliente INT,
     Cod_Barra INT,
     Cantidad INT,
@@ -55,4 +56,22 @@ CREATE TABLE ms_Ventas (
     Fecha_Venta VARCHAR(20),
     primary key (ID_Venta)
 );
+
+drop Trigger stock_update;
+
+DELIMITER //
+CREATE TRIGGER stock_update AFTER INSERT ON ms_Ventas
+FOR EACH ROW
+BEGIN
+-- Actualizar el stock disponible en la tabla ctg_Producto
+    UPDATE ctg_Producto SET Stock_Disponible = Stock_Disponible - (SELECT Cantidad FROM ms_Ventas ORDER BY ID_Producto DESC LIMIT 1);
+END;
+//
+
+DELIMITER ;
+
+ALTER TABLE ms_Compras
+CHANGE COLUMN Fecha_Compra Fecha_Compra VARCHAR(15) NULL DEFAULT NULL ;
+
+
 

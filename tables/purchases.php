@@ -14,6 +14,7 @@
                         <th scope="col">ID proveedor</th>
                         <th scope="col">Cantidad</th>
                         <th scope="col">Precio unitario</th>
+                        <th scope="col">Precio Total</th>
                         <th scope="col">Fecha de compra</th>
                     </tr>
                     </thead>
@@ -29,6 +30,7 @@
                                 echo "<td>" . $row["ID_Proveedor"] . "</td>";
                                 echo "<td>" . $row["Cantidad"] . "</td>";
                                 echo "<td>" . $row["Precio_Unitario_Compra"] . "</td>";
+                                echo "<td>" .$row["Cantidad"]  * $row["Precio_Unitario_Compra"]. "</td>";
                                 echo "<td>" . $row["Fecha_Compra"] . "</td>";
                                 if (!isset($_GET['d'])){?> <td><h6 class="row"><a href="delete.php?t=2&id=<?php echo $row["ID_Compra"]; ?>" style="text-align:right; color:red; text-decoration:none;">- REMOVER</a></h6></td> <?php
                                 ?> <td><h6 class="row"><a href="form.php?t=2&id=<?php echo $row["ID_Compra"]; ?>" style="text-align:right; color:blue; text-decoration:none;">* EDITAR</a></h6></td> <?php

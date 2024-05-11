@@ -17,9 +17,6 @@
         <input type="text" id="form2Example11" name="can" class="form-control"
         placeholder="Cantidad" />
         <p></p>
-        <input type="text" id="form2Example11" name="pu" class="form-control"
-        placeholder="Precio unitario" />
-        <p></p>
     </div>
    
     <div class="text-center pt-1 mb-5 pb-1">
