@@ -57,7 +57,6 @@ CREATE TABLE ms_Ventas (
     primary key (ID_Venta)
 );
 
-drop Trigger stock_update;
 
 DELIMITER //
 CREATE TRIGGER stock_update AFTER INSERT ON ms_Ventas

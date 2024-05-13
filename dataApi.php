@@ -42,9 +42,9 @@
                 $prod = $_POST['prod'];
                 $prov = $_POST['prov'];
                 $can = $_POST['can'];
-                $pu = $_POST['pu']; 
+                //$pu = $_POST['pu']; 
     
-                $sql = "UPDATE ms_Ventas SET ID_Producto = $prod, ID_Cliente = $prov, Cantidad = $can, Precio_Unitario_Venta = $pu WHERE ID_Venta = $id";
+                $sql = "UPDATE ms_Ventas SET ID_Producto = $prod, ID_Cliente = $prov, Cantidad = $can, Precio_Unitario_Venta = (SELECT Precio_Unitario FROM ctg_Producto WHERE ms_Ventas.ID_Producto = ctg_Producto.ID_Producto) WHERE ID_Venta = $id";
                  break;
     
             case 4: 
@@ -86,7 +86,7 @@
                 $pu = $_POST['pu']; 
                 $date = date("d-m-Y");
                 $sql = "INSERT INTO ms_Compras (ID_Producto, ID_Proveedor, Cantidad, Precio_Unitario_Compra, Fecha_Compra) 
-                VALUES ($prod, $prov,$can , $pu, $date)"; break;
+                VALUES ($prod, $prov,$can , $pu, '$date')"; break;
     
             case 3:
                 $prod = $_POST['prod'];
