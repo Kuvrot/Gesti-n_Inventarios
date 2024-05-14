@@ -19,7 +19,7 @@
                     </thead>
                     <tbody>
                         <?php
-
+                            $flag = 0;
                             if ($result->num_rows > 0) {
                             // output data of each row
                             while($row = $result->fetch_assoc()) {
@@ -27,6 +27,9 @@
                                 echo "<td>" . $row["ID_Producto"] . "</td>";
                                 echo "<td>" . $row["Nombre"] . "</td>";
                                 echo "<td>" . $row["Descripcion"] . "</td>";
+                                if ($row["Stock_Disponible"] <= $row["Stock_Minimo"]){
+                                    $flag++; ?>  <?php
+                                }
                                 echo "<td>" . $row["Precio_Unitario"] . "</td>";
                                 echo "<td>" . $row["Stock_Disponible"] . "</td>";
                                 echo "<td>" . $row["Stock_Minimo"] . "</td>";
@@ -36,6 +39,10 @@
                             }
                         }
                             $conn->close();
+
+                            if ($flag > 0){
+                                echo "<script>alert('Hay productos con stock por debajo del mínimo');</script>";
+                            }
 
                         ?>
                     </tbody>

@@ -55,9 +55,7 @@
                     </a>
 
                     <?php
-                    $flag = false; 
                     if ($table == 3){ 
-                        $flag = true;
                         ?>
                         <form action="index.php?t=3" method="POST">
                         <input type="date"  name="date">

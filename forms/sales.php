@@ -48,7 +48,7 @@
 
         <Select name="ref">
             <option value = "1">Seleccione una opción de pago</option>
-            <option value="1">Contado</option>
+            <option value="1">Al contado</option>
             <option value="2">Crédito</option>
         </Select>
     </div>
