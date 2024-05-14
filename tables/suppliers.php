@@ -33,6 +33,7 @@
                                 echo "</tr>";}
                             }
                         }
+
                             $conn->close();
 
                         ?>

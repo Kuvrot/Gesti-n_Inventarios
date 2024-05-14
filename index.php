@@ -46,7 +46,8 @@
             ?>
         </h2>
                 <div class="container">
-                    <a class="btn btn-light shadow" href="printReport.php?t=<?php echo $table?>&d=0" target="_blank">
+                   <?php if($table != 1 && $table != 4){?> <a class="btn btn-light shadow" href="printReport.php?t=<?php echo $table?>&d=0" target="_blank"> <?php } else{ ?>
+                    <a class="btn btn-light shadow" href="downloadCsv.php?t=<?php echo $table?>" target="_blank">  <?php }?>
                         Print <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer-fill" viewBox="0 0 16 16">
                         <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1"/>
                         <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
@@ -55,7 +56,7 @@
                 </div>
             
             <div class="row justify-content-center">
-            <h4 class="row"><a href="form.php?t=<?php echo $table?>" style="text-align:right; color:green; text-decoration:none;">+ AÑADIR</a></h4>
+            <h4 class="row"><a href="form.php?t=<?php echo $table?>" class="" style="text-align:right; color:green; text-decoration:none;">+ AÑADIR</a></h4>
             <div class="col-12">
             
                 <div id="content" class="table-responsive bg-white shadow" >
