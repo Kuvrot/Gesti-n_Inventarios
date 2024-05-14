@@ -7,17 +7,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="styles.css" rel="stylesheet">
 </head>
-<body>
+<body class="gradient-custom-1">
 
     <?php 
     include "header.html";
     include "connect.php";
     ?>
 
-    <section class="intro">
-    <div class="gradient-custom-1 h-100">
+    <main class="intro">
+    <div class="h-100" style="position:relative; margin-top:10%; ">
         <div class="mask d-flex align-items-center h-50">
-        <div class="container" style="margin-top:10%;">
+        <div class="container sticky-position">
         <h2>
             <?php 
                 $table=0;
@@ -53,6 +53,18 @@
                         <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
                         </svg>
                     </a>
+
+                    <?php
+                    $flag = false; 
+                    if ($table == 3){ 
+                        $flag = true;
+                        ?>
+                        <form action="index.php?t=3" method="POST">
+                        <input type="date"  name="date">
+                        <input type="submit" value="filtrar" class="btn btn-dark">
+                        </form>
+                    <?php } ?>
+
                 </div>
             
             <div class="row justify-content-center">
@@ -72,7 +84,14 @@
                                 include "tables/purchases.php";
                                 break;
                             case 3:   
-                                include "tables/sales.php";
+                                if (isset($_POST['date'])){
+                                    $flag = true;
+                                    $date = $_POST['date'];
+                                    include "tables/sales.php";
+                                }else{
+                                    include "tables/sales.php";
+                                }
+                                
                                 break;
                             case 4:   
                                 include "tables/clients.php";
@@ -85,27 +104,14 @@
         </div>
         </div>
     </div>
-    </section>
-    <footer style="background-color: #ffe7e7;" class=" text-center text-lg-start shadow-lg sticky-bottom">
+    </main>
+    <footer style="background-color: #ffe7e7;" class=" text-center text-lg-start shadow-lg navbar-scroll sticky-bottom">
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-  PROYECTO_ACADEMICO-NEGOCIOSEII-TECNMCAMPUSPAC
+  PROYECTO_ACADEMICO-NEGOCIOS_ELECTRONICOSII-TECNM_CAMPUS_PACHUCA
   </div>
   <!-- Copyright -->
 </footer>
-    <script>
-        function print (){
-            var divContents = document.getElementById("content").innerHTML; 
-            var a = window.open('', '', 'height=500, width=500'); 
-            a.document.write('<html>'); 
-            a.document.write('<body > <h1>Div contents are <br>'); 
-            a.document.write(divContents); 
-            a.document.write('</body></html>'); 
-            a.document.close(); 
-            a.print(); 
-        }
-    </script>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -43,7 +43,7 @@
     </select>
 
         <input type="text" id="form2Example11" name="pu" class="form-control" style="margin-bottom:2.5%"
-        placeholder="Cantidad de producto" />
+        placeholder="Precio unitario" />
     
         <input type="text" id="form2Example11" name="can" class="form-control"
         placeholder="Cantidad de producto" />

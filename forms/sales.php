@@ -45,6 +45,12 @@
         <input type="text" id="form2Example11" name="can" class="form-control"
         placeholder="Cantidad de producto" />
         <p></p>
+
+        <Select name="ref">
+            <option value = "1">Seleccione una opción de pago</option>
+            <option value="1">Contado</option>
+            <option value="2">Crédito</option>
+        </Select>
     </div>
    
     <div class="text-center pt-1 mb-5 pb-1">

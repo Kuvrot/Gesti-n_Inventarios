@@ -92,10 +92,15 @@
                 $prod = $_POST['prod'];
                 $prov = $_POST['prov'];
                 $can = $_POST['can'];
+                if ($_POST['ref'] == 1){
+                    $ref = "101010";
+                }else {
+                    $ref = "101030";
+                }
                 //$pu = $_POST['pu']; 
                 $date = date("d-m-Y");
-                $sql = "INSERT INTO ms_Ventas (ID_Producto,ID_Cliente, Cantidad, Fecha_Venta) 
-                VALUES ($prod, $prov,$can , '$date')"; break;
+                $sql = "INSERT INTO ms_Ventas (ID_Producto,ID_Cliente, Cantidad, Fecha_Venta , Referencia_Contable) 
+                VALUES ($prod, $prov,$can , '$date' , '$ref')"; break;
     
             case 4: 
                 $nombre = $_POST['nombre'];

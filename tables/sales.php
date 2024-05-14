@@ -1,7 +1,15 @@
 <table class="table mb-0">
                     
                     <?php 
-                        $sql = "SELECT * FROM ms_Ventas";
+                        if (!isset($date)){
+                            $sql = "SELECT * FROM ms_Ventas";
+                        }else{
+                            $d = new DateTime ($date);
+                            $formatted_date = $d->format('d-m-Y');
+                            $d = "".$formatted_date;
+                            $sql = "SELECT * FROM ms_Ventas WHERE Fecha_Venta = '$formatted_date'";
+                        }
+                        
                         $result = $conn->query($sql); 
                     ?>
 
@@ -16,6 +24,7 @@
                         <th scope="col">Cantidad</th>
                         <th scope="col">Precio unitario</th>
                         <th scope="col">Total</th>
+                        <th scope="col">Referencia contable</th>
                         <th scope="col">Fecha de venta</th>
                     </tr>
                     </thead>
@@ -45,7 +54,7 @@
                                
                                     while($row3 = $res2->fetch_assoc()) {
 
-                                        $clientName = $row3["Nombre"];
+                                        $clientName = $row3["Nombre"]; 
                                     }
                                 
                                
@@ -58,6 +67,7 @@
                                 echo "<td>" . $row["Cantidad"] . "</td>";
                                 echo "<td>" . $price. "</td>";
                                 echo "<td>" .$row["Cantidad"]  * $price . "</td>";
+                                echo "<td>" .$row["Referencia_Contable"] . "</td>";
                                 echo "<td>" . $row["Fecha_Venta"] . "</td>";
                                 if (!isset($_GET['d'])){ ?> <td><h6 class="row"><a href="delete.php?t=3&id=<?php echo $row["ID_Venta"]; ?>" style="text-align:right; color:red; text-decoration:none;">- REMOVER</a></h6></td> <?php
                                 ?> <td><h6 class="row"><a href="form.php?t=3&id=<?php echo $row["ID_Venta"]; ?>" style="text-align:right; color:blue; text-decoration:none;">* EDITAR</a></h6></td> <?php
